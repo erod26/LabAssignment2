@@ -17,37 +17,61 @@
 
     .app-container-grid {
       display: grid;
-      grid-template-columns: 1fr 6fr 2fr;
       grid-template-rows: 1fr 7fr 1fr;
       height: 100vh;
     }
 
-    .main-header, .main-footer {
+    .main-header,
+    .main-footer {
       background-color: #9d9b9b;
-    }
-    .main-header, .main-container-grid, .main-footer {
-      grid-column: 1 / 4;
+      display: grid;
+      grid-template-columns: 1fr 6fr 2fr;
     }
 
+    .main-header,
+    .main-container-grid,
+    .main-footer {}
+
     .main-container-grid {
-      align-self:center;
+      display: grid;
+      grid-template-columns: 1fr 6fr 2fr;
+    }
+
+    .align-center {
       justify-self: center;
+      align-self: center;
+      margin: 15px;
+      border: 1px dashed #CCC;
+      height: 80%;
+      width: 100%;
+
     }
   </style>
+  <script src="./main.js"></script>
 </head>
 
 <body>
   <div class="app-container-grid">
     <header class="main-header">
-      <span>LOGO</span>
+      <span class="align-center">r1c1</span>
+      <div id="banner" class="align-center" onmouseenter="greeter.showGreeting()" onmouseleave="greeter.hideGreeting()">r1c2</div>
+      <div class="align-center">r1c3</div>
     </header>
     <div class="main-container-grid">
-      middle
+      <div class="align-center">r2c1</div>
+      <div class="align-center">
+        r2c2
+      </div>
+      <div class="align-center">r2c3</div>
+
     </div>
     <footer class="main-footer">
-      footer text
+      <div class="align-center">r3c1</div>
+      <div class="align-center">r3c2</div>
+      <div class="align-center">r3c3</div>
+
     </footer>
-    
+
   </div>
 </body>
 
